@@ -6,7 +6,6 @@ import "./SimpleStorage.sol";
 // a way to interact with contracts from another contract (deploy contract using another contract)
 
 contract StorageFactory {
-
     SimpleStorage[] public simpleStorageArray;
 
     function createContract() public {
@@ -19,7 +18,7 @@ contract StorageFactory {
         ss.store(ssNum);
     }
 
-    function sfRetrieve(uint256 ssIndex) public view returns (uint256){
+    function sfRetrieve(uint256 ssIndex) public view returns (uint256) {
         SimpleStorage ss = SimpleStorage(address(simpleStorageArray[ssIndex]));
         return ss.retrieve();
     }
